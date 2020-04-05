@@ -24,6 +24,28 @@ public class TestUserRegistration {
             Assert.assertTrue(lastName);
         }
 
+    @Test
+    public void givenEmail_whenValid_thenTrue() {
+        String array[]={"abc.xyz@bl.co.in","abc@yahoo.com","abc-100@yahoo.com","abc.100@yahoo.com",
+                        "abc111@abc.com","abc-100@abc.net","abc.100@abc.com.au",
+                        "abc@gmail.com.com","abc+100@gmail.com"};
+        for(int index=0;index<array.length;index++){
+            boolean email=obj.checkEmail(array[index]);
+            Assert.assertTrue(email);
+        }
+    }
+
+    @Test
+    public void givenEmail_whenInvalid_thenFalse() {
+        String array1[]={"abc","abc()*@gmail.com","abc@.com.my","abc123@gmail.a",
+                         "abc123@.com","abc123@.com.com",".abc@abc.com","abc()*@gmail.com",
+                         "abc@%*.com","abc..2002@gmail.com","abc.@gmail.com","abc@abc@gmail.com",
+                         "abc@gmail.com.1a","abc@gmail.com.aa.au"};
+        for(int index1=0;index1<array1.length;index1++) {
+            boolean Email = obj.checkEmail(array1[index1]);
+            Assert.assertFalse(Email);
+        }
+    }
 }
 
 
