@@ -46,6 +46,18 @@ public class TestUserRegistration {
             Assert.assertFalse(Email);
         }
     }
+
+    @Test
+    public void givenMobileNumber_whenValid_thenTrue() {
+        boolean MobileNumber=obj.checkMobileNumber("91 1234567890");
+        Assert.assertTrue(MobileNumber);
+    }
+
+    @Test
+    public void givenMobileNumber_whenInvalid_thenFalse() {
+        boolean MobileNumber=obj.checkMobileNumber("91 123456789");
+        Assert.assertFalse(MobileNumber);
+    }
 }
 
 
