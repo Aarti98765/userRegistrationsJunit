@@ -60,15 +60,27 @@ public class TestUserRegistration {
     }
 
     @Test
-    public void givenPassword_whenValid_thenTrue() {
-        boolean Password=obj.checkPassword("TYUhdsT75");
+    public void givenPassword_whenRule1Valid_thenTrue() {
+        boolean Password=obj.checkPasswordRule1("TYUhdsT75");
         Assert.assertTrue(Password);
     }
 
     @Test
-    public void givenPassword_whenInvalid_thenFalse() {
-        boolean Password=obj.checkPassword("fgdfdfd");
+    public void givenPassword_whenRule1Invalid_thenFalse() {
+        boolean Password=obj.checkPasswordRule1("fgdfdfd");
         Assert.assertFalse(Password);
+    }
+
+    @Test
+    public void givenPassword_whenRule2Valid_thenTrue() {
+        boolean Password1=obj.checkPasswordRule2("ffa456fhjsYT");
+        Assert.assertTrue(Password1);
+    }
+
+    @Test
+    public void givenPassword_whenRule2Invalid_thenFalse() {
+        boolean Password1=obj.checkPasswordRule2("djhsfdfg");
+        Assert.assertFalse(Password1);
     }
 }
 

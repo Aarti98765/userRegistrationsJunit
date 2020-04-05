@@ -7,7 +7,7 @@ public class userRegistration {
         String pattern2 ="^[a-zA-Z]+([+]?[-]?[.]?[_]?[a-zA-Z0-9]+)?[@]{1}[a-z]+[.]{1}[a-z]{2,}([.]?[a-z]+)?$";
         String pattern3="^[0-9]{2}[ ]{1}[0-9]{10}$";
         String pattern4="^[a-zA-Z0-9]{8,}$";
-
+        String pattern5="^([a-zA-Z0-9]*[A-Z]+[a-zA-Z0-9]*)";
         public static void main(String[] args) {
             System.out.println("Welcome to user registration");
         }
@@ -24,9 +24,19 @@ public class userRegistration {
             return Pattern.matches(pattern3,mobileNumber);
         }
 
-        public boolean checkPassword(String password) {
+        public boolean checkPasswordRule1(String password) {
             return Pattern.matches(pattern4,password);
         }
+
+        public boolean checkPasswordRule2(String pass) {
+        if(pass.length()>=8) {
+            return (Pattern.matches(pattern5, pass));
+        }
+        else {
+            return false;
+        }
+
+    }
 }
 
 
