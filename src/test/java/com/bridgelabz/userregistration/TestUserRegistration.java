@@ -73,27 +73,36 @@ public class TestUserRegistration {
 
     @Test
     public void givenPassword_whenRule2Valid_thenTrue() {
-        boolean Password1=obj.checkPasswordRule2("ffa456fhjsYT");
-        Assert.assertTrue(Password1);
+        boolean Password=obj.checkPasswordRule2("ffa456fhjsYT");
+        Assert.assertTrue(Password);
     }
 
     @Test
     public void givenPassword_whenRule2Invalid_thenFalse() {
-        boolean Password1=obj.checkPasswordRule2("djhsfdfg");
-        Assert.assertFalse(Password1);
+        boolean Password=obj.checkPasswordRule2("djhsfdfg");
+        Assert.assertFalse(Password);
     }
 
     @Test
-    public void givenPassword2_whenValid_thenTrue() {
-        boolean Password2=obj.checkPasswordRule3("19RevatiTT");
-        Assert.assertTrue(Password2);
+    public void givenPassword_whenRule3Valid_thenTrue() {
+        boolean Password=obj.checkPasswordRule3("19AartiTT");
+        Assert.assertTrue(Password);
     }
     @Test
-    public void givenPassword2_whenInvalid_thenFalse() {
-        boolean Password2=obj.checkPasswordRule3("djtDFyhsdfg");
-        Assert.assertFalse(Password2);
+    public void givenPassword_whenRule3Invalid_thenFalse() {
+        boolean Password=obj.checkPasswordRule3("djtDFyhsdfg");
+        Assert.assertFalse(Password);
     }
-
+    @Test
+    public void givenPassword_whenRule4Valid_thenTrue() {
+        boolean Password=obj.checkPasswordRule4("Aarti@1904");
+        Assert.assertTrue(Password);
+    }
+    @Test
+    public void givenPassword_whenRule4Invalid_thenFalse() {
+        boolean Password=obj.checkPasswordRule4("Aarti@19@04");
+        Assert.assertFalse(Password);
+    }
 }
 
 
