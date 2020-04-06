@@ -8,6 +8,7 @@ public class userRegistration {
         String pattern3="^[0-9]{2}[ ]{1}[0-9]{10}$";
         String pattern4="^[a-zA-Z0-9]{8,}$";
         String pattern5="^([a-zA-Z0-9]*[A-Z]+[a-zA-Z0-9]*)";
+        String pattern6="^([a-zA-Z0-9]*[A-Z]+[a-zA-Z0-9]*[0-9]+[a-zA-Z0-9]*)|([a-zA-Z0-9]*[0-9]+[a-zA-Z0-9]*[A-Z]+[a-zA-Z0-9]*)$";
         public static void main(String[] args) {
             System.out.println("Welcome to user registration");
         }
@@ -36,6 +37,14 @@ public class userRegistration {
             return false;
         }
 
+    }
+    public boolean checkPasswordRule3(String pass) {
+        if(pass.length()>=8) {
+            return (Pattern.matches(pattern6,pass));
+        }
+        else {
+            return false;
+        }
     }
 }
 

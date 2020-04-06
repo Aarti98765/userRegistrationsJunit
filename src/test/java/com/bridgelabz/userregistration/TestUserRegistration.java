@@ -82,6 +82,18 @@ public class TestUserRegistration {
         boolean Password1=obj.checkPasswordRule2("djhsfdfg");
         Assert.assertFalse(Password1);
     }
+
+    @Test
+    public void givenPassword2_whenValid_thenTrue() {
+        boolean Password2=obj.checkPasswordRule3("19RevatiTT");
+        Assert.assertTrue(Password2);
+    }
+    @Test
+    public void givenPassword2_whenInvalid_thenFalse() {
+        boolean Password2=obj.checkPasswordRule3("djtDFyhsdfg");
+        Assert.assertFalse(Password2);
+    }
+
 }
 
 
